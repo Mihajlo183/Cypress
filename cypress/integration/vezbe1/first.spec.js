@@ -1,4 +1,5 @@
-import { EMAIL } from "../../fixtures/constans";
+import { EMAIL } from "../../fixtures/constans"
+import { authPage } from '../../page_object/login.page'
 
 describe('My First Test', function(){
     
@@ -42,8 +43,8 @@ describe('My First Test', function(){
 
      it('TC-01 Login to galery app', function(){
         cy.url().should('include', '/login')
-        cy.get('input[id="email"]').type(EMAIL.EXISTING)
-        cy.get('input[id="password"]').type(EMAIL.PASSWORD)
+        authPage.email.type(EMAIL.EXISTING)
+        authPage.password.type(EMAIL.PASSWORD)
         cy.get('button[type="submit"]').click()
 
         // cy.contains('Submit').click()   ---- moze i ovako da se odradi klik
@@ -51,7 +52,7 @@ describe('My First Test', function(){
      })
 
      it('TC-02 Login to galery app invalid credentials', function(){
-         cy.get('input[id="email"]').type(EMAIL.EXISTING)
+        authPage.email.type(EMAIL.EXISTING)
          cy.get('input[id="password"]').type('novasifra')
          cy.get('button[type="submit"]').click()
          cy.get('.alert-danger').should('have.text' , 'Bad Credentials') //have.text je za proveru da li postoji tekst (validaciona poruka)
@@ -60,7 +61,7 @@ describe('My First Test', function(){
 
 
      it('TC-03 Login to galery app invalid credentials', function(){
-        cy.get('input[id="email"]').type(EMAIL.EXISTING)
+        authPage.email.type(EMAIL.EXISTING)
         cy.get('input[id="password"]').type('novasifra1')
         cy.get('button[type="submit"]').click()
         cy.get('.alert-danger').should('have.text' , 'Bad Credentials')
