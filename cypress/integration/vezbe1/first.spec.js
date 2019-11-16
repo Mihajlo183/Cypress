@@ -41,11 +41,12 @@ describe('My First Test', function(){
      })
 
 
-     it('TC-01 Login to galery app', function(){
-        cy.url().should('include', '/login')
-        authPage.email.type(EMAIL.EXISTING)
-        authPage.password.type(EMAIL.PASSWORD)
-        cy.get('button[type="submit"]').click()
+     it('TC-01 Login to galery app', function() {
+         authPage.login(EMAIL.EXISTING, EMAIL.PASSWORD)
+        // cy.url().should('include', '/login')
+        // authPage.email.type(EMAIL.EXISTING)
+        // authPage.password.type(EMAIL.PASSWORD)
+        // authPage.submit.click()
 
         // cy.contains('Submit').click()   ---- moze i ovako da se odradi klik
 

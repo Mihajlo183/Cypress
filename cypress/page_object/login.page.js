@@ -10,7 +10,13 @@ export default class AuthPage {
     get submit(){
         return cy.get('button[type="submit"]')
     }
+    
 
+    login(mejl, sifra) {
+        this.email.type(mejl)
+        this.password.type(sifra)
+        this.submit.click()
+    }
 }
 
 
