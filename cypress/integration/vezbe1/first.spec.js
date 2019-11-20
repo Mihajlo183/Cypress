@@ -1,4 +1,4 @@
-import { EMAIL } from "../../fixtures/constans"
+import { EMAIL } from "../../fixtures/constants"
 import { authPage } from '../../page_object/login.page'
 
 describe('My First Test', function(){
