@@ -1,4 +1,4 @@
-// Random email function is the function for random email
+// Random Email function is the function for random email
 
 export const randomEmail = () => {
     return (

@@ -11,3 +11,12 @@ export const CREDO = {
     PASSWORD: 'oljaiva2007',
     PASSWORD_CONFIRMED: 'oljaiva2007'
 }
+
+export const REGISTER = {
+    ime: ' ',
+    prezime: ' ',
+    mejl: ' ',
+    lozinka: ' ',
+    lozinka_potvrda: ' '
+}
+

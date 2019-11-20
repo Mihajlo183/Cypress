@@ -1,5 +1,7 @@
 import { CREDO } from '../../fixtures/constants'
 import { authPage } from '../../page_object/register.page'
+import { randomEmail } from '../../utils'
+import { REGISTER } from '../../fixtures/constants'
 describe('My Second Test', function(){
     
     beforeEach(() => {
@@ -14,8 +16,8 @@ describe('My Second Test', function(){
     it('TC - 02 GalleryApp Register', function(){
         cy.url().should('include', '/register')
     })
-    it('TC - 03 Checkbox', function() {
-        authPage.register(' ', ' ', ' ', ' ', ' ')
+    it.only('TC - 03 Checkbox', function() {
+        authPage.register(REGISTER)
         cy.get('input[type="checkbox"]').check()
         //cy.get('button[type="submit"]').click()
     })
@@ -82,6 +84,19 @@ describe('My Second Test', function(){
         cy.get('input[id="password-confirmation"]').type('oljaiva')
         cy.get('button[type="submit"]').click()
         cy.get('.alert-danger').should('have.text','The email has already been taken.The password confirmation does not match.')*/
+    })
+
+
+
+    it('TC - 01 Register to galery app', function(){
+        cy.get('input[type="checkbox"]').check()
+        authPage.register({
+            ime: 'Pera',
+            prezime: 'Peric',
+            mejl: randomEmail(),
+            lozinka: 'sifrica1',
+            lozinka_potvrda: 'sifrica1'
+        })
     })
     
 })
