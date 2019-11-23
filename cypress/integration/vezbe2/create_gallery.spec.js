@@ -1,5 +1,6 @@
 import { EMAIL } from '../../fixtures/constants'
 import { authPage } from '../../page_object/login.page'
+import { createGallery } from '../../page_object/create_gallery.page'
 
 
 describe('My First Test', function(){
@@ -27,6 +28,15 @@ describe('My First Test', function(){
         cy.get('div.grid').children().should('have.length', 10)
         cy.contains('Load More').click()
         cy.get('div.grid').children().should('not.have.length',10)
+    })
+
+    it('TC - 03 Create gallery - positive case', function() {
+        cy.contains('Create Gallery').click()
+        createGallery.title.type('This is the title')
+        createGallery.description.type('This is a validd description')
+        createGallery.picture.type('https://www.espreso.rs/data/images/2017/12/08/15/298425_atila-sabo-cigota_ff.jpg')
+        cy.contains('Submit').click()
+
     })
 
     
