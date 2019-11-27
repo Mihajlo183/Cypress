@@ -44,7 +44,7 @@ describe('My First Test', function(){
 
     })
 
-    it.only('TC - 03 Create gallery - input field', function(){
+    it('TC - 03 Create gallery - input field', function(){
         cy.contains('Create Gallery').click()
         cy.contains('Add image').click()
         createGallery.picture.eq(1).should('exist')
