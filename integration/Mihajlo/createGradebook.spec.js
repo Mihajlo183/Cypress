@@ -17,15 +17,6 @@ describe('Create Gradebook', function(){
         cy.url().should('include', 'gradebooks')
     })
 
-    // it('Create Gradebook for Logged in User', function() {
-    //     cy.wait(1000)
-    //     cy.get('.nav-link').eq(2).click()
-    //     cy.get('input[id="title"]').type("zavrsni dnevnik")
-    //     cy.get('select').select('Mihajlo Cvijetinovic')
-    //     cy.get('.btn').click()
-    //     cy.url().should('include', 'gradebooks')
-
-    // })
 
     after(()=>{
         cy.clearLocalStorage();
