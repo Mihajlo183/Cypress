@@ -29,7 +29,7 @@ describe('Login Page', function(){
 
     })
 
-    it('TC - 04 Login with mpty password', function(){
+    it('TC - 04 Login with empty password', function(){
         cy.get('input[name="email"]').type('miko123@gmail.com')
         cy.get('button[type=submit]').click()
         loginPage.password.then(($input)=>{

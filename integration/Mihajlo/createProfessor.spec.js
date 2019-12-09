@@ -5,8 +5,8 @@ import { EMAIL } from '../../fixtures/constans'
 
 
 describe('Create New Professor Page', function(){
-    var professorFirstName = "imeprofesora"
-    var professorLastName = "prezimeprofesora"
+    var professorFirstName = "profesor12"
+    var professorLastName = "profesor12"
     beforeEach(()=>{
         cy.visit('/')
         cy.contains('Sign in').click()
@@ -32,6 +32,7 @@ describe('Create New Professor Page', function(){
         cy.get('.dropdown').click()
         cy.get('.dropdown-item').eq(0).click()
         cy.url().should('include', 'all-professor')
+        wait(1000)
         cy.contains('FirstName').should("be.visible")
         cy.contains('LastName').should("be.visible")
         cy.contains('Picture').should("be.visible")
@@ -42,6 +43,7 @@ describe('Create New Professor Page', function(){
         cy.get('.dropdown').click()
         cy.get('.dropdown-item').eq(0).click()
         cy.url().should('include', 'all-professor')
+        cy.wait(1000)
         cy.get('.form-control').type(professorFirstName)
         cy.contains(professorFirstName).should("be.visible")
     })

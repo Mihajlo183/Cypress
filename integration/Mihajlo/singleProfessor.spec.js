@@ -8,7 +8,7 @@ describe('Single professor page', function(){
         loginPage.login(EMAIL.EXISTING, EMAIL.PASSWORD)
         singleProf.single.click()
     })
-      it('TC -01 Single Professor Page Test', function(){
+      it('TC -01 Single Professor Page ', function(){
         singleProf.h3.should('have.text', 'Single Professor Page')
         singleProf.table.should('contain', 'Professor')
         singleProf.table.should('contain', 'Gradebook')
@@ -17,6 +17,6 @@ describe('Single professor page', function(){
      })
      it('TC -02 Cheking single gradebook link', function(){
         singleProf.singlePage.click()
-        singleProf.h3.should('have.text', 'Single Gradebook Page')
+        singleProf.h3.should('have.text', 'Single Professor Page')
    })
 }) 

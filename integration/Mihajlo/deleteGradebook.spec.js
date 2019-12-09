@@ -8,19 +8,16 @@ describe('Single Gratebook Page', function(){
         cy.contains('Sign in').click()
         loginPage.login(EMAIL.EXISTING, EMAIL.PASSWORD)
     })
-
-      it('TC - 01 Add and Delete comment', function() {
+    
+    it.only('TC - 01 Delete Gradebook', function (){
         cy.wait(1000)
         cy.get('.form-control').eq(0).type("Mih")
         cy.get('.btn').eq(0).click()
-        cy.contains('Mihajlo').should("be.visible").click() 
-        cy.get('textarea[placeholder="Writte your comment"]').type("KOMENTAR")
-        cy.contains('Submit Comment').click()
-        cy.get('.btn').eq(3).click()
-
+        cy.wait(1000)
+        cy.contains('MihajloDnevnik').should("be.visible").click() 
+        cy.contains('Delete Gradebook').click()
+           
         
-    })
-    
-
+        })
 
 })
